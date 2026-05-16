@@ -3,12 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Подпишись в MAX и получи сет в подарок — Аппетит Казань</title>
-  <meta name="description" content="MAX-канал доставки еды «Аппетит» в Казани. Розыгрыши, промокоды, подарки и закрытые акции на роллы и пиццу.">
-  <meta property="og:title" content="Подпишись в MAX и получи сет в подарок — Аппетит Казань">
-  <meta property="og:description" content="MAX-канал доставки еды «Аппетит» в Казани. Розыгрыши, промокоды, подарки и закрытые акции на роллы и пиццу.">
-  <meta property="og:image" content="banner-bottom-clean.png">
+
+  <title>Доставка роллов и пиццы в Казани — Аппетит. Подпишись в MAX и получи сет в подарок</title>
+  <meta name="description" content="Заказывай роллы и пиццу с доставкой по Казани от «Аппетит». Подпишись в MAX-канал и получи сет роллов в подарок. Акции, промокоды и розыгрыши каждую неделю.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Доставка роллов и пиццы в Казани — получи сет в подарок">
+  <meta property="og:description" content="Подпишись в MAX-канал «Аппетит» и получи сет роллов бесплатно. Акции и промокоды на доставку еды по Казани.">
+  <meta property="og:image" content="https://appetit-food.vercel.app/banner-bottom-clean.png">
+  <meta property="og:url" content="https://appetit-food.vercel.app/">
+  <meta property="og:site_name" content="Аппетит — доставка еды в Казани">
   <meta property="og:type" content="website">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Аппетит",
+    "url": "https://appetit-food.vercel.app/",
+    "image": "https://appetit-food.vercel.app/banner-bottom-clean.png",
+    "areaServed": "Казань",
+    "servesCuisine": ["Роллы", "Суши", "Пицца"],
+    "sameAs": ["https://max.ru/appetit_dostavka"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Меню доставки еды Аппетит",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Роллы"}},
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Суши"}},
+        {"@type": "Offer", "itemOffered": {"@type": "MenuItem", "name": "Пицца"}}
+      ]
+    }
+  }
+  </script>
 
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -29,140 +57,419 @@
 
     html,body{
       background:#F7F5F2;
-      margin:0;
-      padding:0;
+      margin:0;padding:0;
       overflow-x:hidden;
-      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+      color:#1a1a1a;
     }
 
-    .banner-wrap{
+    /* ── Доступный sr-only ── */
+    .sr-only{
+      position:absolute;width:1px;height:1px;
+      padding:0;margin:-1px;overflow:hidden;
+      clip:rect(0,0,0,0);white-space:nowrap;border:0;
+    }
+
+    /* ── Обёртка: max-width 480px, mobile-first ── */
+    .wrap{
+      width:100%;
+      max-width:480px;
+      margin:0 auto;
+    }
+
+    /* ════════════════════════════
+       HERO — баннер
+    ════════════════════════════ */
+    .hero{
       position:relative;
       width:100%;
       max-width:480px;
       margin:0 auto;
       background:#F7F5F2;
     }
-
-    .main-banner{
+    .hero__img{
       display:block;
       width:100%;
       height:auto;
     }
-
-    /* ── Верх: невидимая кликабельная зона поверх нарисованной кнопки ── */
     .top-link-area{
       position:absolute;
-      top:2.6%;
-      right:4%;
-      width:42%;
-      height:7%;
-      z-index:30;
-      display:block;
+      top:2.6%;right:4%;
+      width:42%;height:7%;
+      z-index:30;display:block;
       cursor:pointer;
       -webkit-tap-highlight-color:transparent;
     }
-
-    /* ── Низ: PNG-кнопка с анимацией ── */
     .bottom-max-btn{
-      display:block;
-      position:absolute;
-      left:4%;
-      bottom:1%;
-      width:92%;
+      display:block;position:absolute;
+      left:4%;bottom:1%;width:92%;
       z-index:30;
       background:transparent !important;
-      border:none;
-      padding:0;
-      margin:0;
+      border:none;padding:0;margin:0;
       text-decoration:none;
       -webkit-tap-highlight-color:transparent;
     }
-
     .max-btn-img{
-      display:block;
-      width:100%;
-      height:auto;
+      display:block;width:100%;height:auto;
       background:transparent !important;
       animation:breathe 2.6s ease-in-out infinite;
       transform-origin:center;
     }
-
     @keyframes breathe{
       0%,100%{transform:scale(1)}
-      50%     {transform:scale(1.025)}
+      50%    {transform:scale(1.025)}
     }
-
     @media(hover:hover){
       .bottom-max-btn:hover .max-btn-img{
-        animation:none;
-        transform:scale(1.04);
-        transition:transform .2s ease;
+        animation:none;transform:scale(1.04);transition:transform .2s ease;
       }
     }
-
     .bottom-max-btn:active .max-btn-img{
-      animation:none;
-      transform:scale(0.96);
-      transition:transform .1s ease;
+      animation:none;transform:scale(0.96);transition:transform .1s ease;
     }
 
-    /* ── SEO-блок ── */
-    .seo-block{
+    /* ════════════════════════════
+       ОБЩИЕ СЕКЦИИ
+    ════════════════════════════ */
+    section{
+      width:100%;
       max-width:480px;
       margin:0 auto;
-      padding:10px 18px 14px;
-      background:#F7F5F2;
-      color:rgba(40,40,40,.32);
-      font-size:11px;
-      line-height:1.5;
+      padding:24px 20px;
+    }
+    section + section{
+      padding-top:0;
+    }
+
+    h2{
+      font-size:18px;
+      font-weight:700;
+      line-height:1.3;
+      margin-bottom:12px;
+      color:#111;
+    }
+    h3{
+      font-size:15px;
+      font-weight:600;
+      margin-bottom:6px;
+      color:#222;
+    }
+    p{
+      font-size:14px;
+      line-height:1.55;
+      color:#444;
+    }
+
+    /* ════════════════════════════
+       ОФФЕР-ПОЛОСКА
+    ════════════════════════════ */
+    .offer-bar{
+      background:linear-gradient(135deg,#4B2BFF,#8B2BE2);
+      color:#fff;
       text-align:center;
+      padding:14px 20px;
+      font-size:14px;
+      font-weight:600;
+      line-height:1.4;
+    }
+    .offer-bar span{
+      font-size:18px;
+      display:block;
+      margin-bottom:2px;
+    }
+
+    /* ════════════════════════════
+       ПРЕИМУЩЕСТВА
+    ════════════════════════════ */
+    .benefits{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:14px;
+    }
+    .benefit{
+      background:#fff;
+      border-radius:14px;
+      padding:14px 12px;
+      text-align:center;
+      box-shadow:0 1px 6px rgba(0,0,0,.06);
+    }
+    .benefit__icon{font-size:26px;margin-bottom:6px;}
+    .benefit__text{font-size:13px;color:#333;line-height:1.4;}
+
+    /* ════════════════════════════
+       MAX-КАНАЛ
+    ════════════════════════════ */
+    .max-section{background:#fff;border-radius:20px;padding:20px;}
+    .max-list{list-style:none;margin-top:12px;}
+    .max-list li{
+      display:flex;align-items:flex-start;gap:10px;
+      padding:9px 0;border-bottom:1px solid #f0eeec;
+      font-size:14px;color:#333;line-height:1.4;
+    }
+    .max-list li:last-child{border-bottom:none;}
+    .max-list li::before{
+      content:attr(data-icon);
+      font-size:20px;flex-shrink:0;margin-top:-1px;
+    }
+
+    /* ════════════════════════════
+       МЕНЮ-КАТЕГОРИИ
+    ════════════════════════════ */
+    .menu-cats{
+      display:flex;gap:10px;flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .menu-cat{
+      background:#fff;
+      border-radius:50px;
+      padding:8px 16px;
+      font-size:13px;font-weight:600;
+      color:#4B2BFF;
+      box-shadow:0 1px 5px rgba(0,0,0,.07);
+      white-space:nowrap;
+    }
+
+    /* ════════════════════════════
+       ДОСТАВКА
+    ════════════════════════════ */
+    .delivery-row{
+      display:flex;gap:10px;margin-top:12px;
+    }
+    .delivery-card{
+      flex:1;background:#fff;border-radius:14px;
+      padding:14px 12px;text-align:center;
+      box-shadow:0 1px 6px rgba(0,0,0,.06);
+    }
+    .delivery-card__icon{font-size:24px;margin-bottom:5px;}
+    .delivery-card__val{font-size:18px;font-weight:700;color:#4B2BFF;}
+    .delivery-card__label{font-size:11px;color:#888;margin-top:2px;}
+
+    /* ════════════════════════════
+       FAQ
+    ════════════════════════════ */
+    .faq{margin-top:12px;}
+    details{
+      background:#fff;border-radius:14px;
+      margin-bottom:8px;overflow:hidden;
+      box-shadow:0 1px 5px rgba(0,0,0,.06);
+    }
+    details summary{
+      padding:14px 16px;
+      font-size:14px;font-weight:600;color:#111;
+      cursor:pointer;list-style:none;
+      display:flex;justify-content:space-between;align-items:center;
+    }
+    details summary::after{content:"＋";font-size:18px;color:#4B2BFF;flex-shrink:0;}
+    details[open] summary::after{content:"－";}
+    details p{
+      padding:0 16px 14px;
+      font-size:13px;color:#555;line-height:1.55;
+    }
+
+    /* ════════════════════════════
+       ФИНАЛЬНЫЙ CTA
+    ════════════════════════════ */
+    .cta-section{
+      text-align:center;
+      padding-bottom:32px;
+    }
+    .cta-section p{
+      font-size:13px;color:#888;margin-top:10px;
+    }
+    .cta-btn{
+      display:block;
+      background:linear-gradient(135deg,#4B2BFF,#8B2BE2);
+      color:#fff;
+      text-decoration:none;
+      border-radius:50px;
+      padding:16px 24px;
+      font-size:16px;font-weight:700;
+      text-align:center;
+      animation:breathe 2.6s ease-in-out infinite;
+      -webkit-tap-highlight-color:transparent;
+    }
+    @media(hover:hover){
+      .cta-btn:hover{animation:none;filter:brightness(1.1);}
+    }
+    .cta-btn:active{animation:none;transform:scale(0.97);}
+
+    /* ════════════════════════════
+       SEO-ФУТЕР
+    ════════════════════════════ */
+    .seo-footer{
+      max-width:480px;margin:0 auto;
+      padding:10px 20px 20px;
+      color:rgba(40,40,40,.32);
+      font-size:10px;line-height:1.5;text-align:center;
     }
   </style>
 </head>
+
 <body>
 
-  <div class="banner-wrap">
+<!-- H1 скрытый — SEO-якорь страницы -->
+<h1 class="sr-only">Доставка роллов и пиццы в Казани — Аппетит</h1>
 
-    <!-- Баннер: верх оригинальный, нижняя кнопка закрашена -->
-    <img
-      src="banner-bottom-clean.png"
-      class="main-banner"
-      alt="Подпишись в MAX и получи сет в подарок — Аппетит Казань"
-      width="1024"
-      height="1536"
-      loading="eager"
-      fetchpriority="high"
-    >
+<!-- ══ HERO ══ -->
+<section class="hero" aria-label="Главный баннер">
+  <img
+    src="banner-bottom-clean.png"
+    class="hero__img"
+    alt="Доставка роллов и пиццы в Казани — Аппетит. Подпишись в MAX и получи сет в подарок"
+    width="1024" height="1536"
+    loading="eager" fetchpriority="high"
+  >
+  <a href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
+     class="top-link-area"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Подписаться в MAX"></a>
+  <a href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
+     class="bottom-max-btn"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Подпишись в MAX и получи сет в подарок">
+    <img src="btn-bottom.png" class="max-btn-img"
+         alt="Кнопка — Подпишись в MAX и получи сет роллов в подарок">
+  </a>
+</section>
 
-    <!-- Верх: невидимая ссылка поверх нарисованной кнопки -->
-    <a
-      href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
-      class="top-link-area"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Подписаться в MAX"
-    ></a>
+<!-- ══ ОФФЕР-ПОЛОСКА ══ -->
+<div class="offer-bar wrap">
+  <span>🎁 Сет роллов — бесплатно</span>
+  Подпишись в MAX-канал прямо сейчас и получи подарок при первом заказе
+</div>
 
-    <!-- Низ: анимированная PNG-кнопка -->
-    <a
-      href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
-      class="bottom-max-btn"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="btn-bottom.png" class="max-btn-img" alt="Подпишись в MAX и получи сет в подарок">
-    </a>
+<!-- ══ ПРЕИМУЩЕСТВА ══ -->
+<section aria-labelledby="benefits-title">
+  <h2 id="benefits-title">Почему выбирают Аппетит в Казани</h2>
+  <div class="benefits">
+    <div class="benefit">
+      <div class="benefit__icon">🍣</div>
+      <div class="benefit__text">Свежие ингредиенты каждый день</div>
+    </div>
+    <div class="benefit">
+      <div class="benefit__icon">🚀</div>
+      <div class="benefit__text">Быстрая доставка по городу</div>
+    </div>
+    <div class="benefit">
+      <div class="benefit__icon">💰</div>
+      <div class="benefit__text">Акции и скидки для подписчиков</div>
+    </div>
+    <div class="benefit">
+      <div class="benefit__icon">🎰</div>
+      <div class="benefit__text">Розыгрыши призов каждую неделю</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MAX-КАНАЛ ══ -->
+<section>
+  <div class="max-section">
+    <h2>Что ты получишь в MAX-канале Аппетит</h2>
+    <ul class="max-list">
+      <li data-icon="🎁">Сет роллов в подарок при подписке</li>
+      <li data-icon="🔥">Закрытые акции — только для подписчиков</li>
+      <li data-icon="🎟️">Промокоды на скидку к каждому заказу</li>
+      <li data-icon="🎁">Подарки и бонусы от Аппетит</li>
+      <li data-icon="🏆">Розыгрыши призов каждую неделю</li>
+      <li data-icon="⚡">Первым узнавай о новинках меню</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ МЕНЮ ══ -->
+<section aria-labelledby="menu-title">
+  <h2 id="menu-title">Роллы и пицца с доставкой по Казани</h2>
+  <p>Большой выбор блюд на любой вкус — от классики до авторских позиций.</p>
+  <div class="menu-cats">
+    <span class="menu-cat">🍱 Сеты роллов</span>
+    <span class="menu-cat">🍣 Роллы</span>
+    <span class="menu-cat">🍙 Суши</span>
+    <span class="menu-cat">🍕 Пицца</span>
+    <span class="menu-cat">🥗 Салаты</span>
+    <span class="menu-cat">🥤 Напитки</span>
+  </div>
+</section>
+
+<!-- ══ ДОСТАВКА ══ -->
+<section aria-labelledby="delivery-title">
+  <h2 id="delivery-title">Доставка еды по всей Казани</h2>
+  <p>Доставляем роллы и пиццу по Казани быстро и в удобное для тебя время.</p>
+  <div class="delivery-row">
+    <div class="delivery-card">
+      <div class="delivery-card__icon">🏙️</div>
+      <div class="delivery-card__val">Казань</div>
+      <div class="delivery-card__label">Зона доставки</div>
+    </div>
+    <div class="delivery-card">
+      <div class="delivery-card__icon">📱</div>
+      <div class="delivery-card__val">MAX</div>
+      <div class="delivery-card__label">Заказ через канал</div>
+    </div>
+    <div class="delivery-card">
+      <div class="delivery-card__icon">🎁</div>
+      <div class="delivery-card__val">Подарок</div>
+      <div class="delivery-card__label">При подписке</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section aria-labelledby="faq-title">
+  <h2 id="faq-title">Часто спрашивают</h2>
+  <div class="faq">
+
+    <details>
+      <summary>Как заказать роллы с доставкой в Казани?</summary>
+      <p>Подпишись на MAX-канал «Аппетит» по кнопке на этой странице. Там ты найдёшь актуальное меню, акции и сможешь оформить заказ прямо в чате.</p>
+    </details>
+
+    <details>
+      <summary>Что такое MAX-канал и зачем подписываться?</summary>
+      <p>MAX — это мессенджер, а наш канал в нём — место, где мы публикуем закрытые акции, промокоды и розыгрыши. Подписчики получают подарки и скидки, которых нет нигде больше.</p>
+    </details>
+
+    <details>
+      <summary>Что я получу при подписке?</summary>
+      <p>При подписке на MAX-канал «Аппетит» ты получаешь сет роллов в подарок. Также тебя ждут еженедельные розыгрыши, промокоды и закрытые предложения.</p>
+    </details>
+
+    <details>
+      <summary>По каким районам Казани есть доставка?</summary>
+      <p>Мы доставляем еду по Казани. Уточнить зону доставки можно в нашем MAX-канале — напиши нам, и мы ответим быстро.</p>
+    </details>
+
+    <details>
+      <summary>Можно ли заказать пиццу и роллы в одном заказе?</summary>
+      <p>Да, ты можешь сформировать комбо из роллов и пиццы в одном заказе. Подпишись на канал и узнай актуальные комбо-акции.</p>
+    </details>
 
   </div>
+</section>
 
-  <div class="seo-block">
-    Доставка роллов и пиццы в Казани. Акции, промокоды и розыгрыши от «Аппетит». Доставка еды Казань, роллы и пицца Казань, акции на роллы, заказать роллы Казань, доставка пиццы Казань.
-  </div>
+<!-- ══ ФИНАЛЬНЫЙ CTA ══ -->
+<section class="cta-section">
+  <h2>Подпишись в MAX — получи сет роллов бесплатно</h2>
+  <a href="https://max.ru/appetit_dostavka/AZ4rue3mKJE"
+     class="cta-btn"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Подписаться в MAX-канал Аппетит">
+    🎁 Подписаться и получить подарок
+  </a>
+  <p>Уже более 1000 подписчиков получают закрытые акции</p>
+</section>
+
+<!-- ══ SEO-ФУТЕР ══ -->
+<footer class="seo-footer">
+  Доставка роллов и пиццы в Казани. Акции, промокоды и розыгрыши от «Аппетит».
+  Доставка еды Казань, роллы и пицца Казань, заказать роллы Казань, доставка пиццы Казань.
+</footer>
 
 <script>
-  document.querySelectorAll('.top-link-area,.bottom-max-btn').forEach(function(el){
+  // Трекинг всех CTA-кликов
+  document.querySelectorAll('.top-link-area,.bottom-max-btn,.cta-btn').forEach(function(el){
     el.addEventListener('click',function(){
-      if(typeof ym!=='undefined') ym(XXXXXXXX,'reachGoal','max_click');
+      if(typeof ym!=='undefined') ym(109190808,'reachGoal','max_click');
     });
   });
 </script>

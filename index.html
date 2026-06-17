@@ -93,40 +93,79 @@
       width:100%;
       height:auto;
     }
-    .top-link-area{
-      position:absolute;
-      top:2.6%;right:4%;
-      width:42%;height:7%;
-      z-index:30;display:block;
-      cursor:pointer;
-      -webkit-tap-highlight-color:transparent;
+    .hero-cta{
+      display:flex;
+      gap:3%;
+      padding:0 4%;
+      margin-top:12px;
+      position:relative;
+      z-index:5;
     }
-    .bottom-max-btn{
-      display:block;position:absolute;
-      left:4%;bottom:1%;width:92%;
-      z-index:30;
-      background:transparent !important;
-      border:none;padding:0;margin:0;
+    @media(max-width:360px){
+      .hero-cta{flex-direction:column;gap:10px;}
+    }
+    .hero-btn{
+      flex:1;
+      display:flex;
+      min-height:58px;
+      border-radius:18px;
       text-decoration:none;
+      color:#fff;
+      box-shadow:0 4px 10px rgba(0,0,0,.12);
+      transition:transform .2s ease, box-shadow .2s ease;
+      transform-origin:center;
       -webkit-tap-highlight-color:transparent;
     }
-    .max-btn-img{
-      display:block;width:100%;height:auto;
-      background:transparent !important;
-      animation:breathe 2.6s ease-in-out infinite;
-      transform-origin:center;
+    @media(hover:hover){
+      .hero-btn:hover{
+        transform:scale(1.02);
+        box-shadow:0 6px 14px rgba(0,0,0,.18);
+      }
     }
+    .hero-btn:active{
+      transform:scale(0.98);
+      box-shadow:0 2px 6px rgba(0,0,0,.10);
+    }
+    .hero-btn__surface{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      padding:14px 16px;
+      border-radius:18px;
+      font-size:15px;
+      font-weight:700;
+      white-space:nowrap;
+      box-sizing:border-box;
+    }
+    .hero-btn--max .hero-btn__surface{
+      background:linear-gradient(135deg,#9D3EF0,#4A32D8);
+      animation:breathe 2.6s ease-in-out infinite, heroGlowMax 2.6s ease-in-out infinite;
+    }
+    .hero-btn--tg .hero-btn__surface{
+      background:linear-gradient(135deg,#2BB1EA,#0A6CCB);
+      animation:breathe 2.6s ease-in-out infinite, heroGlowTg 2.6s ease-in-out infinite;
+    }
+    .hero-btn__icon{
+      display:flex;align-items:center;justify-content:center;
+      width:30px;height:30px;flex-shrink:0;
+      background:rgba(255,255,255,.2);
+      border-radius:50%;
+    }
+    .hero-btn__label{flex:1;text-align:left;margin-left:2px;}
+    .hero-btn__arrow{flex-shrink:0;opacity:.9;}
     @keyframes breathe{
       0%,100%{transform:scale(1)}
       50%    {transform:scale(1.025)}
     }
-    @media(hover:hover){
-      .bottom-max-btn:hover .max-btn-img{
-        animation:none;transform:scale(1.04);transition:transform .2s ease;
-      }
+    @keyframes heroGlowMax{
+      0%,100%{box-shadow:0 6px 16px rgba(91,33,182,.35)}
+      50%    {box-shadow:0 6px 22px rgba(157,62,240,.55)}
     }
-    .bottom-max-btn:active .max-btn-img{
-      animation:none;transform:scale(0.96);transition:transform .1s ease;
+    @keyframes heroGlowTg{
+      0%,100%{box-shadow:0 6px 16px rgba(10,108,203,.35)}
+      50%    {box-shadow:0 6px 22px rgba(43,177,234,.55)}
     }
 
     /* ════════════════════════════
@@ -159,6 +198,65 @@
       font-size:14px;
       line-height:1.55;
       color:#444;
+    }
+
+    /* ════════════════════════════
+       НАС УЖЕ ВЫБРАЛИ
+    ════════════════════════════ */
+    .trust__title{
+      text-align:center;
+      font-size:18px;
+      font-weight:700;
+      margin-bottom:14px;
+      color:#1a1a1a;
+    }
+    .trust-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:8px;
+    }
+    .trust-card{
+      background:#FDF1EC;
+      border-radius:16px;
+      padding:14px 8px;
+      text-align:center;
+      box-shadow:0 1px 6px rgba(0,0,0,.05);
+      min-height:150px;
+    }
+    .trust-card__icon{
+      display:flex;align-items:center;justify-content:center;
+      width:34px;height:34px;
+      margin:0 auto 8px;
+      border-radius:50%;
+      background:#FCE0D3;
+      font-size:17px;
+    }
+    .trust-card__num-wrap{
+      display:flex;align-items:baseline;justify-content:center;
+      gap:1px;
+    }
+    .trust-card__num{
+      font-size:22px;
+      font-weight:800;
+      color:#F4511E;
+    }
+    .trust-card__suffix{
+      font-size:18px;
+      font-weight:800;
+      color:#F4511E;
+    }
+    .trust-card__label{
+      font-size:11.5px;
+      line-height:1.35;
+      color:#555;
+      margin-top:4px;
+      text-wrap:balance;
+    }
+    @media(max-width:360px){
+      .trust-card{padding:12px 6px;}
+      .trust-card__num{font-size:19px;}
+      .trust-card__suffix{font-size:15px;}
+      .trust-card__label{font-size:10.5px;}
     }
 
     /* ════════════════════════════
@@ -315,23 +413,66 @@
 <!-- ══ HERO ══ -->
 <section class="hero" aria-label="Главный баннер">
   <img
-    src="banner-bottom-clean.png"
+    src="hero-top.png"
     class="hero__img"
-    alt="Доставка роллов и пиццы в Казани — Аппетит. Подпишись в MAX и получи сет в подарок"
-    width="1024" height="1536"
+    alt="Доставка роллов и пиццы в Казани — Аппетит. Подпишись в MAX или Telegram и получи сет в подарок"
+    width="1054" height="1294"
     loading="eager" fetchpriority="high"
   >
-  <a href="https://max.ru/appetit_dostavka/AZ5loMfWGNY"
-     class="top-link-area"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Подписаться в MAX"></a>
-  <a href="https://max.ru/appetit_dostavka/AZ5loMfWGNY"
-     class="bottom-max-btn"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Подпишись в MAX и получи сет в подарок">
-    <img src="btn-bottom.png" class="max-btn-img"
-         alt="Кнопка — Подпишись в MAX и получи сет роллов в подарок">
-  </a>
+  <div class="hero-cta">
+    <a href="https://max.ru/id166101157610_5_bot"
+       class="hero-btn hero-btn--max"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в MAX">
+      <span class="hero-btn__surface">
+        <span class="hero-btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3C7.03 3 3 6.58 3 11c0 2.39 1.18 4.53 3.06 6.02-.1.94-.41 2.1-1.06 3.48 1.66-.23 2.95-.84 3.96-1.5A10.6 10.6 0 0 0 12 19c4.97 0 9-3.58 9-8s-4.03-8-9-8Z" fill="#fff"/></svg>
+        </span>
+        <span class="hero-btn__label">MAX</span>
+        <svg class="hero-btn__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+    <a href="https://t.me/appetitkazan_bot"
+       class="hero-btn hero-btn--tg"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в Telegram">
+      <span class="hero-btn__surface">
+        <span class="hero-btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M21 4 2.5 11.3c-.7.27-.66 1.28.06 1.5l4.4 1.36 1.7 5.27c.2.62 1 .76 1.43.26l2.4-2.78 4.5 3.34c.6.45 1.46.12 1.6-.62L23 5.2c.15-.8-.66-1.45-1.4-1.16Z" fill="#fff"/></svg>
+        </span>
+        <span class="hero-btn__label">Telegram</span>
+        <svg class="hero-btn__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    </a>
+  </div>
+</section>
+
+<!-- ══ НАС УЖЕ ВЫБРАЛИ ══ -->
+<section class="trust" aria-labelledby="trust-title">
+  <h2 id="trust-title" class="trust__title">❤️ Нас уже выбрали</h2>
+  <div class="trust-stats">
+    <div class="trust-card">
+      <span class="trust-card__icon" aria-hidden="true">🔥</span>
+      <div class="trust-card__num-wrap">
+        <span class="trust-card__num" data-count="1000">0</span><span class="trust-card__suffix">+</span>
+      </div>
+      <p class="trust-card__label">подписчиков в закрытых каналах</p>
+    </div>
+    <div class="trust-card">
+      <span class="trust-card__icon" aria-hidden="true">🎁</span>
+      <div class="trust-card__num-wrap">
+        <span class="trust-card__num" data-count="118">0</span>
+      </div>
+      <p class="trust-card__label">подарков выдали за 7 дней</p>
+    </div>
+    <div class="trust-card">
+      <span class="trust-card__icon" aria-hidden="true">🚀</span>
+      <div class="trust-card__num-wrap">
+        <span class="trust-card__num" data-count="317">0</span>
+      </div>
+      <p class="trust-card__label">новых подписок за месяц</p>
+    </div>
+  </div>
 </section>
 
 <!-- ══ ОФФЕР-ПОЛОСКА ══ -->
@@ -468,11 +609,60 @@
 
 <script>
   // Трекинг всех CTA-кликов
-  document.querySelectorAll('.top-link-area,.bottom-max-btn,.cta-btn').forEach(function(el){
+  document.querySelectorAll('.hero-btn--max,.cta-btn').forEach(function(el){
     el.addEventListener('click',function(){
       if(typeof ym!=='undefined') ym(109190808,'reachGoal','max_click');
     });
   });
+  document.querySelectorAll('.hero-btn--tg').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(typeof ym!=='undefined') ym(109190808,'reachGoal','telegram_click');
+    });
+  });
+
+  // Анимация счётчиков "Нас уже выбрали"
+  (function(){
+    var trustStats = document.querySelector('.trust-stats');
+    if(!trustStats) return;
+    var counters = trustStats.querySelectorAll('[data-count]');
+    if(!counters.length) return;
+    var animated = false;
+    function animateCounter(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var duration = 1400;
+      var start = null;
+      function step(ts){
+        if(start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if(progress < 1){
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+    function runAnimation(){
+      if(animated) return;
+      animated = true;
+      counters.forEach(animateCounter);
+    }
+    if('IntersectionObserver' in window){
+      var observer = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            runAnimation();
+            obs.unobserve(entry.target);
+          }
+        });
+      }, {threshold:0.3});
+      observer.observe(trustStats);
+    } else {
+      runAnimation();
+    }
+  })();
 </script>
 
 </body>

@@ -3,18 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/32-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/16-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/180-180.png">
 
   <title>Доставка роллов и пиццы в Казани — Аппетит. Подпишись в MAX и получи сет в подарок</title>
   <meta name="description" content="Заказывай роллы и пиццу с доставкой по Казани от «Аппетит». Подпишись в MAX-канал и получи сет роллов в подарок. Акции, промокоды и розыгрыши каждую неделю.">
   <meta name="yandex-verification" content="a3bb717598cc36b9" />
+  <link rel="canonical" href="https://appetit-food.vercel.app/">
+  <meta name="robots" content="index,follow,max-image-preview:large">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Доставка роллов и пиццы в Казани — получи сет в подарок">
   <meta property="og:description" content="Подпишись в MAX-канал «Аппетит» и получи сет роллов бесплатно. Акции и промокоды на доставку еды по Казани.">
   <meta property="og:image" content="https://appetit-food.vercel.app/banner-bottom-clean.png">
+  <meta property="og:image:alt" content="Аппетит — доставка роллов и пиццы в Казани, подпишись и получи сет в подарок">
   <meta property="og:url" content="https://appetit-food.vercel.app/">
   <meta property="og:site_name" content="Аппетит — доставка еды в Казани">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Доставка роллов и пиццы в Казани — получи сет в подарок">
+  <meta name="twitter:description" content="Подпишись в MAX-канал «Аппетит» и получи сет роллов бесплатно. Акции и промокоды на доставку еды по Казани.">
+  <meta name="twitter:image" content="https://appetit-food.vercel.app/banner-bottom-clean.png">
 
   <!-- Schema.org -->
   <script type="application/ld+json">
@@ -201,260 +214,41 @@
     }
 
     /* ════════════════════════════
-       НАС УЖЕ ВЫБРАЛИ
+       ВИЗУАЛЬНЫЙ БАННЕР (топ 2.png)
     ════════════════════════════ */
-    .trust__title{
-      text-align:center;
-      font-size:18px;
-      font-weight:700;
-      margin-bottom:14px;
-      color:#1a1a1a;
+    .visual-banner{padding:0 28px}
+    .visual-banner__frame{
+      position:relative;
+      width:100%;
+      max-width:480px;
+      margin:0 auto;
     }
-    .trust-stats{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:8px;
-    }
-    .trust-card{
-      background:#FDF1EC;
-      border-radius:16px;
-      padding:14px 8px;
-      text-align:center;
-      box-shadow:0 1px 6px rgba(0,0,0,.05);
-      min-height:150px;
-    }
-    .trust-card__icon{
-      display:flex;align-items:center;justify-content:center;
-      width:34px;height:34px;
-      margin:0 auto 8px;
-      border-radius:50%;
-      background:#FCE0D3;
-      font-size:17px;
-    }
-    .trust-card__num-wrap{
-      display:flex;align-items:baseline;justify-content:center;
-      gap:1px;
-    }
-    .trust-card__num{
-      font-size:22px;
-      font-weight:800;
-      color:#F4511E;
-    }
-    .trust-card__suffix{
-      font-size:18px;
-      font-weight:800;
-      color:#F4511E;
-    }
-    .trust-card__label{
-      font-size:11.5px;
-      line-height:1.35;
-      color:#555;
-      margin-top:4px;
-      text-wrap:balance;
-    }
-    @media(max-width:360px){
-      .trust-card{padding:12px 6px;}
-      .trust-card__num{font-size:19px;}
-      .trust-card__suffix{font-size:15px;}
-      .trust-card__label{font-size:10.5px;}
-    }
-
-    /* ════════════════════════════
-       ВЫБЕРИ, ГДЕ УДОБНЕЕ
-    ════════════════════════════ */
-    .channel-select__title{
-      text-align:center;
-      font-size:19px;
-      font-weight:800;
-      line-height:1.3;
-      margin-bottom:6px;
-      color:#111;
-    }
-    .channel-select__subtitle{
-      text-align:center;
-      font-size:13px;
-      color:#777;
-      line-height:1.4;
-      max-width:320px;
-      margin:0 auto 16px;
-    }
-    .channel-cards{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:10px;
-    }
-    @media(max-width:360px){
-      .channel-cards{grid-template-columns:1fr;}
-    }
-    .channel-card{
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      gap:8px;
-      min-height:110px;
-      min-width:0;
-      padding:14px 16px;
-      border-radius:18px;
-      text-decoration:none;
-      color:#fff;
-      box-shadow:0 4px 10px rgba(0,0,0,.12);
-      transition:transform .2s ease, box-shadow .2s ease;
-      -webkit-tap-highlight-color:transparent;
-    }
-    @media(hover:hover){
-      .channel-card:hover{transform:scale(1.02);}
-    }
-    .channel-card:active{transform:scale(0.98);}
-    .channel-card--max{
-      background:linear-gradient(135deg,#9D3EF0,#4A32D8);
-      animation:breathe 2.6s ease-in-out infinite, heroGlowMax 2.6s ease-in-out infinite;
-    }
-    .channel-card--tg{
-      background:linear-gradient(135deg,#2BB1EA,#0A6CCB);
-      animation:breathe 2.6s ease-in-out infinite, heroGlowTg 2.6s ease-in-out infinite;
-    }
-    .channel-card__icon{
-      display:flex;align-items:center;justify-content:center;
-      width:34px;height:34px;
-      background:rgba(255,255,255,.2);
-      border-radius:50%;
-    }
-    .channel-card__title{font-size:15px;font-weight:800;}
-    .channel-card__subtitle{font-size:12px;line-height:1.35;opacity:.92;overflow-wrap:anywhere;}
-
-    /* ════════════════════════════
-       ОФФЕР-ПОЛОСКА
-    ════════════════════════════ */
-    .offer-bar{
-      background:linear-gradient(135deg,#4B2BFF,#8B2BE2);
-      color:#fff;
-      text-align:center;
-      padding:14px 20px;
-      font-size:14px;
-      font-weight:600;
-      line-height:1.4;
-    }
-    .offer-bar span{
-      font-size:18px;
+    .visual-banner__img{
       display:block;
-      margin-bottom:2px;
+      width:100%;
+      height:auto;
     }
-
-    /* ════════════════════════════
-       ПРЕИМУЩЕСТВА
-    ════════════════════════════ */
-    .benefits{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-top:14px;
+    .banner-overlay{
+      position:absolute;
+      background:transparent;
+      outline:none;
+      border:none;
+      border-radius:24px;
     }
-    .benefit{
-      background:#fff;
-      border-radius:14px;
-      padding:14px 12px;
-      text-align:center;
-      box-shadow:0 1px 6px rgba(0,0,0,.06);
+    .banner-overlay--max.banner-overlay--cta{ animation:overlayPulseMax 3s ease-in-out infinite; }
+    .banner-overlay--tg.banner-overlay--cta { animation:overlayPulseTg  3s ease-in-out infinite; }
+    @keyframes overlayPulseMax{
+      0%,100%{ box-shadow:0 0 0 rgba(157,62,240,0); }
+      50%    { box-shadow:0 0 10px 1px rgba(157,62,240,.25); }
     }
-    .benefit__icon{font-size:26px;margin-bottom:6px;}
-    .benefit__text{font-size:13px;color:#333;line-height:1.4;}
-
-    /* ════════════════════════════
-       MAX-КАНАЛ
-    ════════════════════════════ */
-    .max-section{background:#fff;border-radius:20px;padding:20px;}
-    .max-list{list-style:none;margin-top:12px;}
-    .max-list li{
-      display:flex;align-items:flex-start;gap:10px;
-      padding:9px 0;border-bottom:1px solid #f0eeec;
-      font-size:14px;color:#333;line-height:1.4;
+    @keyframes overlayPulseTg{
+      0%,100%{ box-shadow:0 0 0 rgba(43,177,234,0); }
+      50%    { box-shadow:0 0 10px 1px rgba(43,177,234,.25); }
     }
-    .max-list li:last-child{border-bottom:none;}
-    .max-list li::before{
-      content:attr(data-icon);
-      font-size:20px;flex-shrink:0;margin-top:-1px;
-    }
-
-    /* ════════════════════════════
-       МЕНЮ-КАТЕГОРИИ
-    ════════════════════════════ */
-    .menu-cats{
-      display:flex;gap:10px;flex-wrap:wrap;
-      margin-top:12px;
-    }
-    .menu-cat{
-      background:#fff;
-      border-radius:50px;
-      padding:8px 16px;
-      font-size:13px;font-weight:600;
-      color:#4B2BFF;
-      box-shadow:0 1px 5px rgba(0,0,0,.07);
-      white-space:nowrap;
-    }
-
-    /* ════════════════════════════
-       ДОСТАВКА
-    ════════════════════════════ */
-    .delivery-row{
-      display:flex;gap:10px;margin-top:12px;
-    }
-    .delivery-card{
-      flex:1;background:#fff;border-radius:14px;
-      padding:14px 12px;text-align:center;
-      box-shadow:0 1px 6px rgba(0,0,0,.06);
-    }
-    .delivery-card__icon{font-size:24px;margin-bottom:5px;}
-    .delivery-card__val{font-size:18px;font-weight:700;color:#4B2BFF;}
-    .delivery-card__label{font-size:11px;color:#888;margin-top:2px;}
-
-    /* ════════════════════════════
-       FAQ
-    ════════════════════════════ */
-    .faq{margin-top:12px;}
-    details{
-      background:#fff;border-radius:14px;
-      margin-bottom:8px;overflow:hidden;
-      box-shadow:0 1px 5px rgba(0,0,0,.06);
-    }
-    details summary{
-      padding:14px 16px;
-      font-size:14px;font-weight:600;color:#111;
-      cursor:pointer;list-style:none;
-      display:flex;justify-content:space-between;align-items:center;
-    }
-    details summary::after{content:"＋";font-size:18px;color:#4B2BFF;flex-shrink:0;}
-    details[open] summary::after{content:"－";}
-    details p{
-      padding:0 16px 14px;
-      font-size:13px;color:#555;line-height:1.55;
-    }
-
-    /* ════════════════════════════
-       ФИНАЛЬНЫЙ CTA
-    ════════════════════════════ */
-    .cta-section{
-      text-align:center;
-      padding-bottom:32px;
-    }
-    .cta-section p{
-      font-size:13px;color:#888;margin-top:10px;
-    }
-    .cta-btn{
-      display:block;
-      background:linear-gradient(135deg,#4B2BFF,#8B2BE2);
-      color:#fff;
-      text-decoration:none;
-      border-radius:50px;
-      padding:16px 24px;
-      font-size:16px;font-weight:700;
-      text-align:center;
-      animation:breathe 2.6s ease-in-out infinite;
-      -webkit-tap-highlight-color:transparent;
-    }
-    @media(hover:hover){
-      .cta-btn:hover{animation:none;filter:brightness(1.1);}
-    }
-    .cta-btn:active{animation:none;transform:scale(0.97);}
+    .banner-overlay--max.banner-overlay--channel{ top:26.2%; left:4.2%;  width:44.8%; height:12.2%; animation:overlayPulseMax 3s ease-in-out infinite; }
+    .banner-overlay--tg.banner-overlay--channel { top:26.2%; left:51%;   width:44.8%; height:12.2%; animation:overlayPulseTg  3s ease-in-out infinite; }
+    .banner-overlay--max.banner-overlay--cta    { top:91.7%; left:4.2%;  width:44.8%; height:3.7%;  }
+    .banner-overlay--tg.banner-overlay--cta     { top:91.7%; left:51%;   width:44.8%; height:3.7%;  }
 
     /* ════════════════════════════
        SEO-ФУТЕР
@@ -483,7 +277,8 @@
     loading="eager" fetchpriority="high"
   >
   <div class="hero-cta">
-    <a href="https://max.ru/id166101157610_5_bot"
+    <a href="https://max.ru/id166101157610_5_bot?utm_source=landing&utm_medium=hero&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_hero"
        class="hero-btn hero-btn--max"
        target="_blank" rel="noopener noreferrer"
        aria-label="Подписаться в MAX">
@@ -495,7 +290,8 @@
         <svg class="hero-btn__arrow" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </span>
     </a>
-    <a href="https://t.me/appetitkazan_bot"
+    <a href="https://t.me/appetitkazan_bot?utm_source=landing&utm_medium=hero&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_hero"
        class="hero-btn hero-btn--tg"
        target="_blank" rel="noopener noreferrer"
        aria-label="Подписаться в Telegram">
@@ -510,186 +306,37 @@
   </div>
 </section>
 
-<!-- ══ НАС УЖЕ ВЫБРАЛИ ══ -->
-<section class="trust" aria-labelledby="trust-title">
-  <h2 id="trust-title" class="trust__title">❤️ Нас уже выбрали</h2>
-  <div class="trust-stats">
-    <div class="trust-card">
-      <span class="trust-card__icon" aria-hidden="true">🔥</span>
-      <div class="trust-card__num-wrap">
-        <span class="trust-card__num" data-count="1000">0</span><span class="trust-card__suffix">+</span>
-      </div>
-      <p class="trust-card__label">подписчиков в закрытых каналах</p>
-    </div>
-    <div class="trust-card">
-      <span class="trust-card__icon" aria-hidden="true">🎁</span>
-      <div class="trust-card__num-wrap">
-        <span class="trust-card__num" data-count="118">0</span>
-      </div>
-      <p class="trust-card__label">подарков выдали за 7 дней</p>
-    </div>
-    <div class="trust-card">
-      <span class="trust-card__icon" aria-hidden="true">🚀</span>
-      <div class="trust-card__num-wrap">
-        <span class="trust-card__num" data-count="317">0</span>
-      </div>
-      <p class="trust-card__label">новых подписок за месяц</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ВЫБЕРИ, ГДЕ УДОБНЕЕ ══ -->
-<section class="channel-select" aria-labelledby="channel-select-title">
-  <h2 id="channel-select-title" class="channel-select__title">Выбери, где удобнее<br>получать закрытые акции</h2>
-  <p class="channel-select__subtitle">Промокоды, подарки, розыгрыши и бонусы только для подписчиков</p>
-  <div class="channel-cards">
-    <a href="https://max.ru/id166101157610_5_bot"
-       class="channel-card channel-card--max"
+<!-- ══ ВИЗУАЛЬНЫЙ БАННЕР (топ 2.png) ══ -->
+<section class="visual-banner" aria-label="Закрытые акции, подписка на канал и часто задаваемые вопросы">
+  <div class="visual-banner__frame">
+    <img
+      src="новый баннер/топ 2.png"
+      class="visual-banner__img"
+      alt="Аппетит: подпишись в MAX или Telegram, получи закрытые акции и подарок"
+      width="790" height="1738"
+      loading="lazy" decoding="async"
+    >
+    <a href="https://max.ru/id166101157610_5_bot?utm_source=landing&utm_medium=middle&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_mid"
+       class="banner-overlay banner-overlay--max banner-overlay--channel"
        target="_blank" rel="noopener noreferrer"
-       aria-label="Подписаться в MAX">
-      <span class="channel-card__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 3C7.03 3 3 6.58 3 11c0 2.39 1.18 4.53 3.06 6.02-.1.94-.41 2.1-1.06 3.48 1.66-.23 2.95-.84 3.96-1.5A10.6 10.6 0 0 0 12 19c4.97 0 9-3.58 9-8s-4.03-8-9-8Z" fill="#fff"/></svg>
-      </span>
-      <span class="channel-card__title">MAX</span>
-      <span class="channel-card__subtitle">Удобный канал в MAX</span>
-    </a>
-    <a href="https://t.me/appetitkazan_bot"
-       class="channel-card channel-card--tg"
+       aria-label="Подписаться в MAX"></a>
+    <a href="https://t.me/appetitkazan_bot?utm_source=landing&utm_medium=middle&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_mid"
+       class="banner-overlay banner-overlay--tg banner-overlay--channel"
        target="_blank" rel="noopener noreferrer"
-       aria-label="Подписаться в Telegram">
-      <span class="channel-card__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M21 4 2.5 11.3c-.7.27-.66 1.28.06 1.5l4.4 1.36 1.7 5.27c.2.62 1 .76 1.43.26l2.4-2.78 4.5 3.34c.6.45 1.46.12 1.6-.62L23 5.2c.15-.8-.66-1.45-1.4-1.16Z" fill="#fff"/></svg>
-      </span>
-      <span class="channel-card__title">Telegram</span>
-      <span class="channel-card__subtitle">Классический канал в Telegram</span>
-    </a>
+       aria-label="Подписаться в Telegram"></a>
+    <a href="https://max.ru/id166101157610_5_bot?utm_source=landing&utm_medium=bottom&utm_campaign=appetit_subscribe&utm_content=max"
+       data-goal="max_click_bottom"
+       class="banner-overlay banner-overlay--max banner-overlay--cta"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в MAX"></a>
+    <a href="https://t.me/appetitkazan_bot?utm_source=landing&utm_medium=bottom&utm_campaign=appetit_subscribe&utm_content=telegram"
+       data-goal="telegram_click_bottom"
+       class="banner-overlay banner-overlay--tg banner-overlay--cta"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Подписаться в Telegram"></a>
   </div>
-</section>
-
-<!-- ══ ОФФЕР-ПОЛОСКА ══ -->
-<div class="offer-bar wrap">
-  <span>🎁 Сет роллов — бесплатно</span>
-  Подпишись в MAX-канал прямо сейчас и получи подарок при первом заказе
-</div>
-
-<!-- ══ ПРЕИМУЩЕСТВА ══ -->
-<section aria-labelledby="benefits-title">
-  <h2 id="benefits-title">Почему выбирают Аппетит в Казани</h2>
-  <div class="benefits">
-    <div class="benefit">
-      <div class="benefit__icon">🍣</div>
-      <div class="benefit__text">Свежие ингредиенты каждый день</div>
-    </div>
-    <div class="benefit">
-      <div class="benefit__icon">🚀</div>
-      <div class="benefit__text">Быстрая доставка по городу</div>
-    </div>
-    <div class="benefit">
-      <div class="benefit__icon">💰</div>
-      <div class="benefit__text">Акции и скидки для подписчиков</div>
-    </div>
-    <div class="benefit">
-      <div class="benefit__icon">🎰</div>
-      <div class="benefit__text">Розыгрыши призов каждую неделю</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ MAX-КАНАЛ ══ -->
-<section>
-  <div class="max-section">
-    <h2>Что ты получишь в MAX-канале Аппетит</h2>
-    <ul class="max-list">
-      <li data-icon="🎁">Сет роллов в подарок при подписке</li>
-      <li data-icon="🔥">Закрытые акции — только для подписчиков</li>
-      <li data-icon="🎟️">Промокоды на скидку к каждому заказу</li>
-      <li data-icon="🎁">Подарки и бонусы от Аппетит</li>
-      <li data-icon="🏆">Розыгрыши призов каждую неделю</li>
-      <li data-icon="⚡">Первым узнавай о новинках меню</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ══ МЕНЮ ══ -->
-<section aria-labelledby="menu-title">
-  <h2 id="menu-title">Роллы и пицца с доставкой по Казани</h2>
-  <p>Большой выбор блюд на любой вкус — от классики до авторских позиций.</p>
-  <div class="menu-cats">
-    <span class="menu-cat">🍱 Сеты роллов</span>
-    <span class="menu-cat">🍣 Роллы</span>
-    <span class="menu-cat">🍙 Суши</span>
-    <span class="menu-cat">🍕 Пицца</span>
-    <span class="menu-cat">🥗 Салаты</span>
-    <span class="menu-cat">🥤 Напитки</span>
-  </div>
-</section>
-
-<!-- ══ ДОСТАВКА ══ -->
-<section aria-labelledby="delivery-title">
-  <h2 id="delivery-title">Доставка еды по всей Казани</h2>
-  <p>Доставляем роллы и пиццу по Казани быстро и в удобное для тебя время.</p>
-  <div class="delivery-row">
-    <div class="delivery-card">
-      <div class="delivery-card__icon">🏙️</div>
-      <div class="delivery-card__val">Казань</div>
-      <div class="delivery-card__label">Зона доставки</div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-card__icon">📱</div>
-      <div class="delivery-card__val">MAX</div>
-      <div class="delivery-card__label">Заказ через канал</div>
-    </div>
-    <div class="delivery-card">
-      <div class="delivery-card__icon">🎁</div>
-      <div class="delivery-card__val">Подарок</div>
-      <div class="delivery-card__label">При подписке</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FAQ ══ -->
-<section aria-labelledby="faq-title">
-  <h2 id="faq-title">Часто спрашивают</h2>
-  <div class="faq">
-
-    <details>
-      <summary>Как заказать роллы с доставкой в Казани?</summary>
-      <p>Подпишись на MAX-канал «Аппетит» по кнопке на этой странице. Там ты найдёшь актуальное меню, акции и сможешь оформить заказ прямо в чате.</p>
-    </details>
-
-    <details>
-      <summary>Что такое MAX-канал и зачем подписываться?</summary>
-      <p>MAX — это мессенджер, а наш канал в нём — место, где мы публикуем закрытые акции, промокоды и розыгрыши. Подписчики получают подарки и скидки, которых нет нигде больше.</p>
-    </details>
-
-    <details>
-      <summary>Что я получу при подписке?</summary>
-      <p>При подписке на MAX-канал «Аппетит» ты получаешь сет роллов в подарок. Также тебя ждут еженедельные розыгрыши, промокоды и закрытые предложения.</p>
-    </details>
-
-    <details>
-      <summary>По каким районам Казани есть доставка?</summary>
-      <p>Мы доставляем еду по Казани. Уточнить зону доставки можно в нашем MAX-канале — напиши нам, и мы ответим быстро.</p>
-    </details>
-
-    <details>
-      <summary>Можно ли заказать пиццу и роллы в одном заказе?</summary>
-      <p>Да, ты можешь сформировать комбо из роллов и пиццы в одном заказе. Подпишись на канал и узнай актуальные комбо-акции.</p>
-    </details>
-
-  </div>
-</section>
-
-<!-- ══ ФИНАЛЬНЫЙ CTA ══ -->
-<section class="cta-section">
-  <h2>Подпишись в MAX — получи сет роллов бесплатно</h2>
-  <a href="https://max.ru/id166101157610_5_bot"
-     class="cta-btn"
-     target="_blank" rel="noopener noreferrer"
-     aria-label="Подписаться в MAX-канал Аппетит">
-    🎁 Подписаться и получить подарок
-  </a>
-  <p>Уже более 1000 подписчиков получают закрытые акции</p>
 </section>
 
 <!-- ══ SEO-ФУТЕР ══ -->
@@ -700,60 +347,13 @@
 
 <script>
   // Трекинг всех CTA-кликов
-  document.querySelectorAll('.hero-btn--max,.channel-card--max,.cta-btn').forEach(function(el){
-    el.addEventListener('click',function(){
-      if(typeof ym!=='undefined') ym(109190808,'reachGoal','max_click');
-    });
-  });
-  document.querySelectorAll('.hero-btn--tg,.channel-card--tg').forEach(function(el){
-    el.addEventListener('click',function(){
-      if(typeof ym!=='undefined') ym(109190808,'reachGoal','telegram_click');
-    });
-  });
-
-  // Анимация счётчиков "Нас уже выбрали"
-  (function(){
-    var trustStats = document.querySelector('.trust-stats');
-    if(!trustStats) return;
-    var counters = trustStats.querySelectorAll('[data-count]');
-    if(!counters.length) return;
-    var animated = false;
-    function animateCounter(el){
-      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-      var duration = 1400;
-      var start = null;
-      function step(ts){
-        if(start === null) start = ts;
-        var progress = Math.min((ts - start) / duration, 1);
-        var eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-        if(progress < 1){
-          requestAnimationFrame(step);
-        } else {
-          el.textContent = target;
-        }
+  document.querySelectorAll('[data-goal]').forEach(function(el){
+    el.addEventListener('click', function(){
+      if (typeof ym !== 'undefined') {
+        ym(109190808, 'reachGoal', el.dataset.goal);
       }
-      requestAnimationFrame(step);
-    }
-    function runAnimation(){
-      if(animated) return;
-      animated = true;
-      counters.forEach(animateCounter);
-    }
-    if('IntersectionObserver' in window){
-      var observer = new IntersectionObserver(function(entries, obs){
-        entries.forEach(function(entry){
-          if(entry.isIntersecting){
-            runAnimation();
-            obs.unobserve(entry.target);
-          }
-        });
-      }, {threshold:0.3});
-      observer.observe(trustStats);
-    } else {
-      runAnimation();
-    }
-  })();
+    });
+  });
 </script>
 
 </body>
